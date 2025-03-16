@@ -1,0 +1,16 @@
+tr,td{
+    padding: 8px;
+   
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#sub{
+   display:flex;
+   color: red;
+   justify-content: center;
+   align-items: center;
+  
+
+  
+}

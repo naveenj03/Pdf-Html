@@ -1,0 +1,42 @@
+.page-break {
+    page-break-before: always;
+    margin-top: 10000px;
+    margin-bottom: 500px;
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .bill-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .bill-header, .bill-footer {
+            text-align: center;
+            padding: 10px 0;
+            color: #555;
+        }
+        .items {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .items th, .items td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .total {
+            font-weight: bold;
+            text-align: right;
+        }
+    

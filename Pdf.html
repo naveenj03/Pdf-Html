@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container" id="temp" style="display: none;">
+        <header>
+            <div class="logo">D</div>
+            <div class="icons">
+                <span class="search-icon">&#x1F50D;</span>
+                <span class="menu-icon">&#9776;</span>
+            </div>
+        </header>
+        
+        <div class="tag">#Top</div>
+        
+        <h1>A Responsibly As Teach Leading, Global Company</h1>
+        <p>Creating Superior Products & Services</p>
+        
+        <div class="trust-pilot">
+            <div class="trust-icon" style="background-color: red;">&#9733;</div>
+            <div class="trust-text">
+                <span > Trust Pilot</span>
+                <span>Rated Best <strong>12.6K</strong> Reviews</span>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="play-section">
+                <div class="play-button">Play</div>
+            </div>
+            <div class="stats-section">
+                <div class="stat">72%</div>
+                <div class="stat">28%</div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex align-items-center justify-content-center">
+        <button onclick="showPDF()">Show PDF</button>
+    </div>
+
+  
+
+    <div id="pdfContainer" class="container d-flex align-items-center justify-content-center"></div>
+    <script>
+        function showPDF()
+        {
+            const { jsPDF } = window.jspdf;
+            const doc=new jsPDF();
+
+            const content=document.getElementById('temp').innerHTML;
+
+           const warpContent= doc.splitTextToSize(content)
+
+        doc.html(warpContent,{
+        callback: function (doc) {
+            // Generate the PDF and display it inside the container
+            const pdfData = doc.output('datauristring');
+            const container = document.getElementById("pdfContainer");
+            container.innerHTML = `<embed src="${pdfData}" width="600" height="500" type="application/pdf">`;
+        }
+    });
+
+
+        }
+        const pageWidth = doc.internal.pageSize.width;
+            const pageHeight = doc.internal.pageSize.height;
+
+            const contentWidth = pageWidth - 2 * padding; // Width with padding
+            const contentHeight = pageHeight - 2 * padding - marginTop - marginBottom; 
+            const warpText=doc.splitTextToSize(contentText,contentWidth);
+            doc.text(warpText, padding, marginTop); 
+
+       
+
+
+     
+    </script>
+   
+</body>
+</html>
+

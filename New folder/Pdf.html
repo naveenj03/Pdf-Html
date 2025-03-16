@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <embed src="Documents\naveen.pdf"type="application/pdf"/>
+
+    <div>
+        <h2 class="text-center">WelCome All</h2>
+        <button class="btn btn-primary text-right" onclick="Download()">Download pdf</button>
+    </div>
+   <div class="container mt-2" id="temp">
+    <table class="table table-success table-bordered table-striped ">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>naveen</td>
+            <td>23</td>
+            <td>Madurai</td>
+        </tr>
+        <tr>
+            <td>Muthu</td>
+            <td>24</td>
+            <td>Srivi</td>
+        </tr>
+    </table>
+   </div>
+   <script>
+    function Download()
+    {
+        const pdf=document.getElementById('temp');
+        html2pdf().from(pdf).save()
+    }
+   </script>
+</body>
+</html>
